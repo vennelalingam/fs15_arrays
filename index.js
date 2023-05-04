@@ -80,6 +80,56 @@ const listOfWeekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Frid
  // replace with your code
 console.log("The days in the week are:", listOfWeekDays.toString());
 
+/*------------------
+6)
+Change the array so it starts
+with Monday and ends with Sunday
+instead. To do this, use two methods
+from the following list:
+.push
+.pop
+.shift
+.unshift
+
+Hint: when you remove "Sunday" from
+the beginning of the array, assign it
+to a variable so you don't lose it.
+DO NOT USE LOOPS.
+------------------*/
+// ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+let sunday = weekDays.shift();
+weekDays.push(sunday.toString());
+console.log(weekDays) //  ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+console.log("Question #6 ", weekDays[6] === "Sunday" ? "is correct." : "is incorrect.");
+
+/*------------------
+7)
+Now, using some of the methods
+from the last question, create a
+new array with all the items in the
+weekDays array reversed. 
+
+Hint: figure out how to make a copy
+of the weekDays array. Then, use some of
+the methods you learned to remove items
+from that copy and add into the reversedWeekDays
+array. DO NOT USE LOOPS.
+------------------*/
+
+const reversedWeekDays = ["Sunday","Saturday","Friday","Thursday","Wednesday","Tuesday","Monday"];
+reversedWeekDays.splice(4, 3, "Friday", "Saturday", "Sunday") 
+console.log (reversedWeekDays) // ['Sunday', 'Saturday', 'Friday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+reversedWeekDays.splice(0, 3);
+console.log(reversedWeekDays) // ['Thursday', 'Friday', 'Saturday', 'Sunday']
+reversedWeekDays.unshift("Tuesday");
+console.log(reversedWeekDays) //  ['Tuesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+reversedWeekDays.splice(1, 0, "Wednesday");
+console.log(reversedWeekDays) //  ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+reversedWeekDays.unshift("Monday");
+console.log(reversedWeekDays) // ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+console.log("Question #7 ", reversedWeekDays[6] === "Sunday" ? "is correct." : "is incorrect.");
+
 
 
 
